@@ -1,0 +1,19 @@
+.home-image{
+  /*background-color: #d8dce3;*/
+  background-image: url("../../assets/aca2.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /*width: 1950px; !** original picture width 2120px **!*/
+  /*height: 1200px; !** original picture height 1414px **!*/
+  height: 100vh;
+}
+.site-heading{
+  margin-top: 2%;
+  text-align: center;
+}
+
+.card{
+  height: 200px;
+  margin-left: 40px;
+}

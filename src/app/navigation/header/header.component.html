@@ -1,0 +1,46 @@
+<mat-toolbar color="primary">
+  <div fxHide.gt-xs>
+    <button mat-icon-button (click)="onSideNavToggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+  <div class="logo-link" fxHide.xs>
+    <a  style="cursor: pointer" routerLink="/" >
+      <img style="display: block; width: border-box" class="logo" src="../assets/Zeus.svg">
+    </a>
+  </div>
+  <div class="logo-link" fxFlex fxLayout  fxLayoutAlign="flex-end" fxHide.gt-xs>
+    <a style="cursor: pointer" routerLink="/" fxHide.gt-xs>
+      <img style="display: block; width: border-box" class="logo-small" src="../assets/Zeus-small.svg">
+    </a>
+  </div>
+
+  <div class="main-menu" fxFlex fxLayout  fxLayoutAlign="flex-start" fxHide.xs>
+    <button *ngIf="authService.isUserLoggedIn()" mat-button [matMenuTriggerFor]="accountMenu">Account</button>
+    <mat-menu #accountMenu="matMenu">
+      <button mat-menu-item routerLink="/account/search">Search</button>
+      <button mat-menu-item>Item 2</button>
+    </mat-menu>
+    <button *ngIf="authService.isUserLoggedIn()" mat-button [matMenuTriggerFor]="transactionMenu">Transaction</button>
+    <mat-menu #transactionMenu="matMenu">
+      <button mat-menu-item routerLink="/transaction/search">Search</button>
+      <button mat-menu-item>Item 2</button>
+    </mat-menu>
+    <button *ngIf="authService.isUserLoggedIn()" mat-button [matMenuTriggerFor]="settingsMenu">Admin Settings</button>
+    <mat-menu #settingsMenu="matMenu">
+      <button mat-menu-item routerLink="/trading-partner/search">Trading Partner</button>
+      <button mat-menu-item>Reference Data</button>
+      <button mat-menu-item>Configuration</button>
+    </mat-menu>
+  </div>
+  <div fxFlex fxLayout  fxLayoutAlign="flex-end" fxHide.xs>
+    <button *ngIf="!authService.isUserLoggedIn()" mat-button routerLink="/login">Login</button>
+    <button *ngIf="authService.isUserLoggedIn()" mat-button routerLink="/logout">Logout</button>
+    <button mat-button>Help</button>
+<!--    <ul fxLayout fxLayoutGap="10px" class="navigation-items">-->
+<!--      <li><a routerLink="/signup">About</a></li>-->
+<!--      <li><a routerLink="/login">Login</a></li>-->
+<!--      <li><a routerLink="/training">Help</a></li>-->
+<!--    </ul>-->
+  </div>
+</mat-toolbar>

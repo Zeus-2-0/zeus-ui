@@ -1,0 +1,122 @@
+<section>
+
+  <mat-card class="card container">
+    <mat-card-title>Trading Partner</mat-card-title>
+    <mat-divider inset></mat-divider>
+    <mat-card-content class="detail-form">
+      <form  ngForm #formValues="ngForm">
+        <div fxLayout="row" fxLayoutAlign="left top" fxLayoutGap="50px">
+          <mat-form-field style="width: 500px !important;">
+<!--            <mat-label>Trading Partner Id</mat-label>-->
+            <input class="fields"
+                   type="text"
+                   matInput
+                   disabled
+                   placeholder="Trading Partner Id"
+                   name="tradingPartnerId"
+                   [value]="tradingPartner.tradingPartnerId"
+                   ngModel #tpIdInput="ngModel"
+            >
+
+            <!--          <mat-error *ngIf="emailInput.hasError('required')">Field must not be empty</mat-error>-->
+            <!--          <mat-error *ngIf="!emailInput.hasError('required')">Email is invalid</mat-error>-->
+          </mat-form-field>
+          <mat-form-field style="width: 500px !important;">
+            <input class="fields"
+                   type="text"
+                   matInput
+                   disabled
+                   placeholder="Trading Partner Name"
+                   name="tradingPartnerName"
+                   [value]="tradingPartner.name"
+                   ngModel #tpNameInput="ngModel">
+            <!--          <mat-hint align="end">{{pwInput.value?.length}}/6</mat-hint>-->
+          </mat-form-field>
+          <mat-form-field style="width: 500px !important;">
+            <input class="fields"
+                   type="text"
+                   matInput
+                   disabled
+                   placeholder="Trading Partner Description"
+                   name="tradingPartnerDesc"
+                   [value]="tradingPartner.description"
+                   ngModel #tpDescInput="ngModel">
+          </mat-form-field>
+          <mat-form-field style="width: 500px !important;">
+            <input class="fields"
+                   type="text"
+                   matInput
+                   disabled
+                   placeholder="Line of Business"
+                   name="lineOfBusinessTypeCode"
+                   [value]="tradingPartner.lineOfBusinessTypeCode"
+                   ngModel #tpLobInput="ngModel">
+          </mat-form-field>
+
+        </div>
+        <div style="margin-top: 1%" fxLayout="row" fxLayoutAlign="left top" fxLayoutGap="50px">
+          <mat-form-field>
+            <input class="fields"
+                   type="text"
+                   matInput
+                   disabled
+                   placeholder="State"
+                   name="stateTypeCode"
+                   [value]="tradingPartner.stateTypeCode"
+                   ngModel #tpStateInput="ngModel">
+          </mat-form-field>
+          <mat-form-field>
+            <input class="fields"
+                   type="text"
+                   matInput
+                   disabled
+                   placeholder="Marketplace"
+                   name="marketPlaceTypeCode"
+                   [value]="tradingPartner.marketplaceTypeCode"
+                   ngModel #tpMarketplaceTypeInput="ngModel">
+          </mat-form-field>
+          <mat-form-field>
+            <input class="fields"
+                   type="text"
+                   matInput
+                   disabled
+                   placeholder="Sender Id"
+                   name="senderId"
+                   [value]="tradingPartner.senderId"
+                   ngModel #tpSenderIdInput="ngModel">
+          </mat-form-field>
+          <mat-form-field>
+            <input class="fields"
+                   type="text"
+                   matInput
+                   disabled
+                   placeholder="Receiver Id"
+                   name="receiver Id"
+                   [value]="tradingPartner.receiverId"
+                   ngModel #tpReceiverIdInput="ngModel">
+          </mat-form-field>
+        </div>
+        <!--        <div style="margin-top: 1%; text-align: right; padding-right: 5px">-->
+        <!--          <button class="search-button" type="submit" mat-raised-button color="primary" [disabled]="formValues.invalid">Submit</button>-->
+        <!--          <button type="button" mat-raised-button color="accent" [disabled]="formValues.invalid">Clear</button>-->
+        <!--        </div>-->
+
+      </form>
+    </mat-card-content>
+    <!--    <mat-card-actions>-->
+    <!--      <button mat-raised-button color="primary" type="submit">More</button>-->
+    <!--    </mat-card-actions>-->
+  </mat-card>
+
+
+</section>
+
+<!--<mat-tab-group style="margin: 2% 10%">
+  <mat-tab label="Member">
+    Member Details
+  </mat-tab>
+  <mat-tab label="Enrollments">
+    Enrollment Spans
+  </mat-tab>
+</mat-tab-group>-->
+

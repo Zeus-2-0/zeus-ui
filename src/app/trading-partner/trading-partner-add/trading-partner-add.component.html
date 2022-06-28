@@ -1,0 +1,18 @@
+<section name="tp-add">
+  <mat-card class="card container">
+    <mat-card-title>Trading Partner</mat-card-title>
+    <mat-divider inset></mat-divider>
+    <mat-card-content class="detail-form">
+      <form  ngForm #tpForm="ngForm">
+        <div fxLayout="row" fxLayoutAlign="left top" fxLayoutGap="50px">
+          <mat-form-field>
+            <input class="fields" type="text" matInput placeholder="Trading Partner Id" name="tradingPartnerId" ngModel #tradingPartnerIdInput="ngModel">
+          </mat-form-field>
+          <mat-form-field>
+            <input class="fields" type="text" matInput placeholder="Trading Partner Description" name="tradingPartnerDesc" ngModel #tradingPartnerDescInput="ngModel">
+          </mat-form-field>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</section>

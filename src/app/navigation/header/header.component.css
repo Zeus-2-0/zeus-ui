@@ -1,0 +1,28 @@
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover, a:active{
+  color: lightgray;
+}
+.navigation-items{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.logo{
+  width: 130%;
+
+}
+.logo-link{
+  width: 70px;
+  align-content: center;
+}
+.main-menu{
+  margin-left: 1%;
+}
+.logo-small{
+  padding-left: 33%;
+  width: 25%;
+}

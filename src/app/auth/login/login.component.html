@@ -1,0 +1,31 @@
+<section fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="12px">
+  <mat-card class="card container" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="12px">
+<!--    <div *ngIf="invalidLogin">{{errorMessage}}</div>-->
+    <mat-card-title>Login</mat-card-title>
+    <mat-divider inset></mat-divider>
+    <mat-card-content>
+
+      <form (ngSubmit)="onSubmit(formValues)" ngForm #formValues="ngForm"
+            fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="12px">
+        <mat-form-field>
+          <input type="email" matInput placeholder="Your username" name="username" ngModel #usernameInput="ngModel" required>
+          <mat-error *ngIf="usernameInput.hasError('required')">Field must not be empty</mat-error>
+          <mat-error *ngIf="!usernameInput.hasError('required')">Email is invalid</mat-error>
+        </mat-form-field>
+        <mat-form-field> <!-- hintLabel="Should be 6 characters long">-->
+          <input type="password" matInput required
+                 placeholder="Your password"
+                 name="password" ngModel #pwInput="ngModel">
+<!--          <mat-hint align="end">{{pwInput.value?.length}}/6</mat-hint>-->
+        </mat-form-field>
+        <button class="login-submit" type="submit" mat-raised-button mat-stroked-button color="primary" [disabled]="formValues.invalid">Submit</button>
+        <input hidden matInput value="Close" #action>
+      </form>
+    </mat-card-content>
+<!--    <mat-card-actions>-->
+<!--      <button mat-raised-button color="primary" type="submit">More</button>-->
+<!--    </mat-card-actions>-->
+  </mat-card>
+
+
+</section>

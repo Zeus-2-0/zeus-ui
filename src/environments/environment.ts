@@ -2,8 +2,13 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+// @ts-ignore
+// @ts-ignore
 export const environment = {
-  production: false
+  production: false,
+  testEnvVariable: 'This is a test',
+  apiUrl: window[<any>"env"][<any>"apiUrl"] || "default",
+  debug: window[<any>"env"][<any>"debug"] || false
 };
 
 /*

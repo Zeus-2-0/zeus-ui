@@ -1,0 +1,56 @@
+<div class="container">
+  <mat-card>
+    <mat-card-title>Account Search</mat-card-title>
+    <mat-divider inset></mat-divider>
+    <mat-card-content class="search-form">
+      <form (ngSubmit)="onSubmit(formValues)" ngForm #formValues="ngForm">
+        <div fxLayout="row" fxLayoutAlign="left top" fxLayoutGap="50px">
+          <mat-form-field>
+            <input type="text" matInput placeholder="Account Id" name="accountId" ngModel #accountIdInput="ngModel">
+            <!--          <mat-error *ngIf="emailInput.hasError('required')">Field must not be empty</mat-error>-->
+            <!--          <mat-error *ngIf="!emailInput.hasError('required')">Email is invalid</mat-error>-->
+          </mat-form-field>
+          <mat-form-field>
+            <input type="text" matInput
+                   placeholder="Issuer Subscriber Id"
+                   name="subId" ngModel #subIdInput="ngModel">
+            <!--          <mat-hint align="end">{{pwInput.value?.length}}/6</mat-hint>-->
+          </mat-form-field>
+          <mat-form-field>
+            <input type="text" matInput placeholder="Account Id" name="accountId" ngModel #accountIdInput="ngModel">
+          </mat-form-field>
+          <mat-form-field>
+            <input type="text" matInput placeholder="Account Id" name="accountId" ngModel #accountIdInput="ngModel">
+          </mat-form-field>
+        </div>
+        <div style="margin-top: 1%" fxLayout="row" fxLayoutAlign="left top" fxLayoutGap="50px">
+          <mat-form-field>
+            <input type="text" matInput placeholder="Account Id" name="accountId" ngModel #accountIdInput="ngModel">
+            <!--          <mat-error *ngIf="emailInput.hasError('required')">Field must not be empty</mat-error>-->
+            <!--          <mat-error *ngIf="!emailInput.hasError('required')">Email is invalid</mat-error>-->
+          </mat-form-field>
+          <mat-form-field>
+            <input type="text" matInput
+                   placeholder="Issuer Subscriber Id"
+                   name="subId" ngModel #subIdInput="ngModel">
+            <!--          <mat-hint align="end">{{pwInput.value?.length}}/6</mat-hint>-->
+          </mat-form-field>
+          <mat-form-field>
+            <input type="text" matInput placeholder="Account Id" name="accountId" ngModel #accountIdInput="ngModel">
+          </mat-form-field>
+          <mat-form-field>
+            <input type="text" matInput placeholder="Account Id" name="accountId" ngModel #accountIdInput="ngModel">
+          </mat-form-field>
+        </div>
+        <div style="margin-top: 1%; text-align: left; padding-right: 5px">
+          <button class="search-button" type="submit" mat-raised-button color="primary" [disabled]="formValues.invalid">Submit</button>
+          <button type="button" mat-raised-button color="accent" [disabled]="formValues.invalid">Clear</button>
+        </div>
+
+      </form>
+    </mat-card-content>
+    <!--    <mat-card-actions>-->
+    <!--      <button mat-raised-button color="primary" type="submit">More</button>-->
+    <!--    </mat-card-actions>-->
+  </mat-card>
+</div>

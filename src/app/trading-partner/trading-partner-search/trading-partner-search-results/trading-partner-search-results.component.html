@@ -1,0 +1,35 @@
+<div class="container">
+  <mat-table [dataSource]="datasource" matSort>
+    <ng-container matColumnDef="tradingPartnerId">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Trading Partner Id</mat-header-cell>
+      <mat-cell *matCellDef="let element"><a style="cursor: pointer" (click)="selectAccount(element)">{{element.tradingPartnerId}}</a></mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="description">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Trading Partner Description</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.description}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="lineOfBusinessTypeCode">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Line of Business</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.lineOfBusinessTypeCode}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="marketplaceTypeCode">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Marketplace</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.marketplaceTypeCode}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="stateTypeCode">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>State</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.stateTypeCode}}</mat-cell>
+    </ng-container>
+
+
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+  </mat-table>
+</div>
+
