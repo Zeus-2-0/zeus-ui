@@ -1,0 +1,67 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img src="zeus_logo.png" alt="logo" width="80" height="80"/>
+    </a>
+    <div class="container">
+      <div class="collapse navbar-collapse" id="zeusNavBar">
+        <ul class="navbar-nav mb-2 mb-lg-0">
+          <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+            <a class="nav-link" aria-current="page" routerLink="/">Home</a>
+          </li>
+          <!-- Display the login menu if the user is not logged in -->
+          @if (!userLoggedIn){
+            <li class="nav-item" routerLinkActive="active">
+              <a class="nav-link"
+                 (click)="onLogin()"
+                 style="cursor: pointer"
+              >Login
+              </a>
+            </li>
+          }@else{
+           <!-- Display these options if the user is logged in -->
+            <li class="nav-item" routerLinkActive="active">
+              <a class="nav-link"
+                 routerLink="/zeus/account/search"
+                 style="cursor: pointer"
+              >Account
+              </a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+              <a class="nav-link"
+                 routerLink="/zeus/transaction/search"
+                 style="cursor: pointer"
+              >Transaction
+              </a>
+            </li>
+            <li class="nav-item dropdown" routerLinkActive="active">
+              <a class="nav-link dropdown-toggle"
+                 role="button"
+                 data-bs-toggle="dropdown"
+                 aria-expanded="false"
+              >Admin
+              </a>
+              <ul class="dropdown-menu" id="adminItems">
+                <li><a class="dropdown-item" href="#">Reference Data</a></li>
+                <li><a class="dropdown-item" routerLink="zeus/trading-partner/search">Trading Partner</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Configuration</a></li>
+              </ul>
+            </li>
+          }
+        </ul>
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          @if(userLoggedIn){
+            <li class="nav-item" routerLinkActive="active">
+              <a class="nav-link" (click)="onLogout()" style="cursor: pointer">Logout</a>
+            </li>
+          } @else {
+            <li class="nav-item" routerLink="active">
+              <a class="nav-link" aria-current="page" href="#">Help</a>
+            </li>
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
