@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import {RouterLink, RouterLinkActive} from "@angular/router";
+import {Component, inject} from '@angular/core';
+import {Router, RouterLink, RouterLinkActive} from "@angular/router";
 
 @Component({
   selector: 'zeus-header',
@@ -14,6 +14,12 @@ import {RouterLink, RouterLinkActive} from "@angular/router";
 export class HeaderComponent {
 
   /**
+   * Inject the Router instance for navigation
+   * @private
+   */
+  private router = inject(Router);
+
+  /**
    * Indicates if a user is logged in or not
    */
   userLoggedIn:boolean = false;
@@ -23,6 +29,7 @@ export class HeaderComponent {
    */
   onLogin(){
     this.userLoggedIn = true;
+    this.router.navigate(['/login']);
   }
 
   /**
